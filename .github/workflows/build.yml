@@ -7,12 +7,6 @@
 name: Build Paper
 on:
   push:
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - labeled
 
 jobs:
   build:
@@ -79,35 +73,12 @@ jobs:
           git config --global user.name "GitHub Actions"
           ./gradlew applyPatches --stacktrace
 
-      - name: Build
-        run: ./gradlew build --stacktrace
-
-      - name: Upload Test Results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: Test Results (${{ matrix.java }})
-          path: |
-            **/build/test-results/test/TEST-*.xml
-
       - name: Create Paperclip Jar
         if: fromJSON(steps.determine.outputs.result).action == 'paperclip'
         run: ./gradlew createMojmapPaperclipJar --stacktrace
 
       - name: Upload Paperclip Jar
-        if: fromJSON(steps.determine.outputs.result).action == 'paperclip'
         uses: actions/upload-artifact@v4
         with:
-          name: paper-${{ fromJSON(steps.determine.outputs.result).pr }}
+          name: paper
           path: build/libs/paper-paperclip-*-mojmap.jar
-  event_file:
-    name: "Event File"
-    # Only run on PRs if the source branch is on someone else's repo
-    if: ${{ github.event_name != 'pull_request' || github.repository != github.event.pull_request.head.repo.full_name }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Upload
-        uses: actions/upload-artifact@v4
-        with:
-          name: Event File
-          path: ${{ github.event_path }}
