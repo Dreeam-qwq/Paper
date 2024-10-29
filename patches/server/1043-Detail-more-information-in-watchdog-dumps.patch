@@ -25,7 +25,7 @@ index fff8d15d44613a075b9793c2a41520212166eb3b..4a8356a714ed50d4a32bcf046a2e1649
          }
  
 diff --git a/src/main/java/net/minecraft/network/protocol/PacketUtils.java b/src/main/java/net/minecraft/network/protocol/PacketUtils.java
-index d0d36a57ec4896bcb74970f8fb24d8f3e17db133..e2c24813f59c2fd075c740ac1842a38f20ed8554 100644
+index f7197f1347251a37dd0f6d9ffa2f09bc3a4e1233..1f7f68aad97ee73763c042837f239bdc7167db55 100644
 --- a/src/main/java/net/minecraft/network/protocol/PacketUtils.java
 +++ b/src/main/java/net/minecraft/network/protocol/PacketUtils.java
 @@ -20,6 +20,24 @@ public class PacketUtils {
@@ -61,8 +61,8 @@ index d0d36a57ec4896bcb74970f8fb24d8f3e17db133..e2c24813f59c2fd075c740ac1842a38f
 +                try { // Paper - detailed watchdog information
                  if (listener instanceof ServerCommonPacketListenerImpl serverCommonPacketListener && serverCommonPacketListener.processedDisconnect) return; // CraftBukkit - Don't handle sync packets for kicked players
                  if (listener.shouldHandleMessage(packet)) {
-                     co.aikar.timings.Timing timing = co.aikar.timings.MinecraftTimings.getPacketTiming(packet); // Paper - timings
-@@ -48,6 +68,12 @@ public class PacketUtils {
+                     try {
+@@ -47,6 +67,12 @@ public class PacketUtils {
                  } else {
                      PacketUtils.LOGGER.debug("Ignoring packet due to disconnection: {}", packet);
                  }
@@ -76,10 +76,10 @@ index d0d36a57ec4896bcb74970f8fb24d8f3e17db133..e2c24813f59c2fd075c740ac1842a38f
              });
              throw RunningOnDifferentThreadException.RUNNING_ON_DIFFERENT_THREAD;
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 3b55367865b3583e11ef886678114d4d4b294e8c..a7420e4522e0dff72ce7f8a791b9cd4bfa270106 100644
+index 9af879115a24145ec290ac200565004e49ee7b0b..c9d7ea8fbaf8858564282b42f6f6dda3d6927f8e 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
-@@ -1262,7 +1262,26 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
+@@ -1247,7 +1247,26 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
  
      }
  
@@ -103,14 +103,13 @@ index 3b55367865b3583e11ef886678114d4d4b294e8c..a7420e4522e0dff72ce7f8a791b9cd4b
 +                currentlyTickingEntity.lazySet(entity);
 +            }
 +            // Paper end - log detailed entity tick information
-         ++TimingHistory.entityTicks; // Paper - timings
          // Spigot start
-         co.aikar.timings.Timing timer; // Paper
-@@ -1301,7 +1320,13 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
+         /*if (!org.spigotmc.ActivationRange.checkIfActive(entity)) { // Paper - comment out EAR 2
+             entity.tickCount++;
+@@ -1277,6 +1296,13 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
              this.tickPassenger(entity, entity1, isActive); // Paper - EAR 2
          }
-         // } finally { timer.stopTiming(); } // Paper - timings // EAR 2
--
+ 
 +        // Paper start - log detailed entity tick information
 +        } finally {
 +            if (currentlyTickingEntity.get() == entity) {

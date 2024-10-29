@@ -18,10 +18,10 @@ index da2f9c5afb2994f403a1128af0f7acbd6b73b862..38585b7f0b8e1e287b37820924a1b0d4
      testImplementation("org.hamcrest:hamcrest:2.2")
 diff --git a/src/main/java/com/destroystokyo/paper/entity/ai/MobGoalHelper.java b/src/main/java/com/destroystokyo/paper/entity/ai/MobGoalHelper.java
 new file mode 100644
-index 0000000000000000000000000000000000000000..c99eafab2103c7f5bca7ffba68a10bd853df055f
+index 0000000000000000000000000000000000000000..05e793e722bbb367ca64cd7f26156fa3dabb8474
 --- /dev/null
 +++ b/src/main/java/com/destroystokyo/paper/entity/ai/MobGoalHelper.java
-@@ -0,0 +1,377 @@
+@@ -0,0 +1,380 @@
 +package com.destroystokyo.paper.entity.ai;
 +
 +import com.destroystokyo.paper.entity.RangedEntity;
@@ -271,6 +271,9 @@ index 0000000000000000000000000000000000000000..c99eafab2103c7f5bca7ffba68a10bd8
 +        bukkitMap.put(Breeze.class, org.bukkit.entity.Breeze.class);
 +        bukkitMap.put(net.minecraft.world.entity.animal.armadillo.Armadillo.class, org.bukkit.entity.Armadillo.class);
 +        bukkitMap.put(net.minecraft.world.entity.monster.Bogged.class, org.bukkit.entity.Bogged.class);
++        bukkitMap.put(net.minecraft.world.entity.monster.creaking.Creaking.class, org.bukkit.entity.Creaking.class);
++        bukkitMap.put(net.minecraft.world.entity.monster.creaking.CreakingTransient.class, org.bukkit.entity.CreakingTransient.class);
++        bukkitMap.put(net.minecraft.world.entity.animal.AgeableWaterCreature.class, org.bukkit.entity.Squid.class); // close enough
 +    }
 +
 +    public static String getUsableName(Class<?> clazz) {
@@ -782,10 +785,10 @@ index a8d6d7054110b5d95830296699f004418dae10db..acc25b08ed3b9f978229fa017d23f9fa
          LOOK,
          JUMP,
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index 0d36eb7ae9d07d51449a4a15a6474c3f4befec94..aa7e0c08552ba476cfb266ad474eaecb9cc21a96 100644
+index 6b042419af11730b0159c030ea1881dcfbb37dcd..8339da59b7a73411f45b77f6eb93e8ad65a1ef48 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-@@ -2957,5 +2957,11 @@ public final class CraftServer implements Server {
+@@ -2956,5 +2956,11 @@ public final class CraftServer implements Server {
      public boolean isStopping() {
          return net.minecraft.server.MinecraftServer.getServer().hasStopped();
      }

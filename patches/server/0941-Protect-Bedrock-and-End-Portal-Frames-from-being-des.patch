@@ -13,10 +13,10 @@ A config is provided if you rather let players use these exploits, and let
 them destroy the worlds End Portals and get on top of the nether easy.
 
 diff --git a/src/main/java/net/minecraft/world/level/Level.java b/src/main/java/net/minecraft/world/level/Level.java
-index ffe894f3034a967f7e3d820c6416acb8adbcfb84..35b9a6d382e420844fc21c88b7d8044e3b8b8368 100644
+index 083b72ebacfbba22af2230fb69b311aeee62cb6a..ba4006bc7dc31d10f37023cba7995a9621796f73 100644
 --- a/src/main/java/net/minecraft/world/level/Level.java
 +++ b/src/main/java/net/minecraft/world/level/Level.java
-@@ -447,6 +447,10 @@ public abstract class Level implements LevelAccessor, AutoCloseable {
+@@ -445,6 +445,10 @@ public abstract class Level implements LevelAccessor, AutoCloseable {
      public boolean setBlock(BlockPos pos, BlockState state, int flags, int maxUpdateDepth) {
          // CraftBukkit start - tree generation
          if (this.captureTreeGeneration) {
@@ -40,13 +40,14 @@ index 86656de31b1e33381eddd3ef210122118b31e620..fd1ecedfab037e377e4dded61539689b
  
                              if (!this.level.isInWorldBounds(blockposition)) {
 diff --git a/src/main/java/net/minecraft/world/level/block/Block.java b/src/main/java/net/minecraft/world/level/block/Block.java
-index 9917df070d9815b6915e4a0b022dfe4e5b7861e7..729c3d8279b13d21c65ede89ea50869b69d5bfe6 100644
+index dc242451f397ae6a30b830ef1f211f1a066423a4..0f7b73634930df02d7b0a7f44890597cc2e6deca 100644
 --- a/src/main/java/net/minecraft/world/level/block/Block.java
 +++ b/src/main/java/net/minecraft/world/level/block/Block.java
-@@ -89,6 +89,19 @@ public class Block extends BlockBehaviour implements ItemLike {
+@@ -88,6 +88,21 @@ public class Block extends BlockBehaviour implements ItemLike {
+     public static final int UPDATE_LIMIT = 512;
      protected final StateDefinition<Block, BlockState> stateDefinition;
      private BlockState defaultBlockState;
-     // Paper start
++    // Paper start - Protect Bedrock and End Portal/Frames from being destroyed
 +    public final boolean isDestroyable() {
 +        return io.papermc.paper.configuration.GlobalConfiguration.get().unsupportedSettings.allowPermanentBlockBreakExploits ||
 +            this != Blocks.BARRIER &&
@@ -60,9 +61,10 @@ index 9917df070d9815b6915e4a0b022dfe4e5b7861e7..729c3d8279b13d21c65ede89ea50869b
 +            this != Blocks.STRUCTURE_BLOCK &&
 +            this != Blocks.JIGSAW;
 +    }
-     public co.aikar.timings.Timing timing;
-     public co.aikar.timings.Timing getTiming() {
-         if (timing == null) {
++    // Paper end - Protect Bedrock and End Portal/Frames from being destroyed
+     @Nullable
+     private Item item;
+     private static final int CACHE_SIZE = 256;
 diff --git a/src/main/java/net/minecraft/world/level/block/piston/PistonBaseBlock.java b/src/main/java/net/minecraft/world/level/block/piston/PistonBaseBlock.java
 index e841fccb8f298ef692677583b468869f56dc722c..4b51472502d08ea357da437afeb4b581979e9cff 100644
 --- a/src/main/java/net/minecraft/world/level/block/piston/PistonBaseBlock.java

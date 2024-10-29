@@ -29,10 +29,10 @@ index 2f2bcc1b9b32e58bf70ae6c171177ceb333ed6cd..d7afddd1d961495f0b50302a8da0a70f
          this.x = x;
          this.y = y;
 diff --git a/src/main/java/net/minecraft/world/level/Level.java b/src/main/java/net/minecraft/world/level/Level.java
-index 1b899473c6deeaa1aef9007d8b7bcec98580e61c..8adf12491e01830464b07e7a795db995d31f7a31 100644
+index 96f18fa8fb5eb856a95e94a42504c00046eb491a..a124a360f45cd71810b8253ce266d52145b6f83b 100644
 --- a/src/main/java/net/minecraft/world/level/Level.java
 +++ b/src/main/java/net/minecraft/world/level/Level.java
-@@ -341,7 +341,7 @@ public abstract class Level implements LevelAccessor, AutoCloseable {
+@@ -339,7 +339,7 @@ public abstract class Level implements LevelAccessor, AutoCloseable {
      // Paper end
  
      public boolean isInWorldBounds(BlockPos pos) {

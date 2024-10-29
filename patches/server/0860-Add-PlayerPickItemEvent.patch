@@ -5,7 +5,7 @@ Subject: [PATCH] Add PlayerPickItemEvent
 
 
 diff --git a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-index 293c42dd5e870986a2797840756bd7c4d6a34a5d..c50c3d11700aadd4c0e7114b4b6d5c5d15a33ac4 100644
+index 688d6e51bc8b844ba7648cf1aed1bdd9629c1675..b840f7aac9c830b8aa0aa133bf43f87dfc598b2c 100644
 --- a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 +++ b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 @@ -947,7 +947,17 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl

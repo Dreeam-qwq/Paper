@@ -39,10 +39,10 @@ index d5ed53c37bba79f84b60d616887cd5176e124f10..6c0ea0bde1c36edda92807e317ed37f8
              if (!EnchantmentHelper.hasTag(tool, EnchantmentTags.PREVENTS_BEE_SPAWNS_WHEN_MINING)) {
                  tileentitybeehive.emptyAllLivingFromHive(player, state, BeehiveBlockEntity.BeeReleaseStatus.EMERGENCY);
 diff --git a/src/main/java/net/minecraft/world/level/block/Block.java b/src/main/java/net/minecraft/world/level/block/Block.java
-index 4d140bd83ca0e1554afad80ec4fc6186188a79d8..6fb3f551f432d7e668c606fb7bd3514408e0478a 100644
+index 9d8c4ecd89b05a0e5d4ebb5e686eba5d899765f2..4ff32e3fb1a1979827ef063cda196a43995440fe 100644
 --- a/src/main/java/net/minecraft/world/level/block/Block.java
 +++ b/src/main/java/net/minecraft/world/level/block/Block.java
-@@ -405,10 +405,18 @@ public class Block extends BlockBehaviour implements ItemLike {
+@@ -396,10 +396,18 @@ public class Block extends BlockBehaviour implements ItemLike {
          return this.defaultBlockState();
      }
  

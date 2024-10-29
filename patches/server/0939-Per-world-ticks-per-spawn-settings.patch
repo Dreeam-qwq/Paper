@@ -5,10 +5,10 @@ Subject: [PATCH] Per world ticks per spawn settings
 
 
 diff --git a/src/main/java/net/minecraft/world/level/Level.java b/src/main/java/net/minecraft/world/level/Level.java
-index 83537aa240ebff8dd19b450956730dc3d4f355a0..ffe894f3034a967f7e3d820c6416acb8adbcfb84 100644
+index 01fbefdbed48ab85481c811cca532c91860626f7..083b72ebacfbba22af2230fb69b311aeee62cb6a 100644
 --- a/src/main/java/net/minecraft/world/level/Level.java
 +++ b/src/main/java/net/minecraft/world/level/Level.java
-@@ -186,6 +186,15 @@ public abstract class Level implements LevelAccessor, AutoCloseable {
+@@ -185,6 +185,15 @@ public abstract class Level implements LevelAccessor, AutoCloseable {
          return this.getChunkIfLoaded(chunkX, chunkZ) != null;
      }
      // Paper end - Use getChunkIfLoadedImmediately
@@ -24,7 +24,7 @@ index 83537aa240ebff8dd19b450956730dc3d4f355a0..ffe894f3034a967f7e3d820c6416acb8
  
  
      public abstract ResourceKey<LevelStem> getTypeKey();
-@@ -199,7 +208,7 @@ public abstract class Level implements LevelAccessor, AutoCloseable {
+@@ -198,7 +207,7 @@ public abstract class Level implements LevelAccessor, AutoCloseable {
          // CraftBukkit Ticks things
          for (SpawnCategory spawnCategory : SpawnCategory.values()) {
              if (CraftSpawnCategory.isValidForLimits(spawnCategory)) {

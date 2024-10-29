@@ -5,10 +5,10 @@ Subject: [PATCH] Add CartographyItemEvent
 
 
 diff --git a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-index 836e6b705b201253f2b81d1ca0228b8a0266a1dd..d3975496dcf94d3474e891bcd3105120559b6a61 100644
+index f92624ccd43f448abdee92c975d613cbcb3457c6..90bed0a36b2d518b56164a414350ec02822ad42a 100644
 --- a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 +++ b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-@@ -3133,6 +3133,19 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
+@@ -3130,6 +3130,19 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
                              }
                          }
  

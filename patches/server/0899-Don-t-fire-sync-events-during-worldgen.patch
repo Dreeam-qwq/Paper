@@ -19,10 +19,10 @@ where generation happened directly to a ServerLevel and the
 entity still has the flag set.
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 1bacbb0d0bd5198d0f946a959b2335d6fba0ca88..a628da8a0ed7ae2c7b46df3881bd75dc5b4fd607 100644
+index 7cecbac43f1cd2d9516034ea9d2633c0c76e61f4..7a985c30a973efacf3e8b70e7163c550d86b0870 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
-@@ -1219,6 +1219,7 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
+@@ -1189,6 +1189,7 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
      // CraftBukkit start
      private boolean addEntity(Entity entity, CreatureSpawnEvent.SpawnReason spawnReason) {
          org.spigotmc.AsyncCatcher.catchOp("entity add"); // Spigot
@@ -48,10 +48,10 @@ index c0539c8826a60cbe25855319cc174fb1520798c0..02b9d280486a23d8eef650566dfaa10a
          this.entityData.set(Entity.DATA_POSE, pose);
      }
 diff --git a/src/main/java/net/minecraft/world/entity/EntityType.java b/src/main/java/net/minecraft/world/entity/EntityType.java
-index ca9e63942f3cb8986456410b2a77aafc6541aad2..ccee69813597f45d382268bd1792a49722afebe9 100644
+index 64dc0bd1900575e40ac72a98c6df371223bd244c..c2693d530be00af16b2aa4ca4afd1d136db68183 100644
 --- a/src/main/java/net/minecraft/world/entity/EntityType.java
 +++ b/src/main/java/net/minecraft/world/entity/EntityType.java
-@@ -658,9 +658,15 @@ public class EntityType<T extends Entity> implements FeatureElement, EntityTypeT
+@@ -649,9 +649,15 @@ public class EntityType<T extends Entity> implements FeatureElement, EntityTypeT
      }
  
      public static Optional<Entity> create(CompoundTag nbt, Level world, EntitySpawnReason reason) {
@@ -68,10 +68,10 @@ index ca9e63942f3cb8986456410b2a77aafc6541aad2..ccee69813597f45d382268bd1792a497
          }, () -> {
              EntityType.LOGGER.warn("Skipping Entity with id {}", nbt.getString("id"));
 diff --git a/src/main/java/net/minecraft/world/entity/LivingEntity.java b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-index 30424789ba1c8d25f830145501b4a7399b91f2d1..9bc6ed9fd8e5154d39fe12ffed1ecd5ec8e70df8 100644
+index 09bd6ba5907d42bed08872f18d40d8c743d392ff..251abe382f951c3ddac8112a0ffe1dc906b88e4c 100644
 --- a/src/main/java/net/minecraft/world/entity/LivingEntity.java
 +++ b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-@@ -1161,6 +1161,11 @@ public abstract class LivingEntity extends Entity implements Attackable {
+@@ -1159,6 +1159,11 @@ public abstract class LivingEntity extends Entity implements Attackable {
      }
  
      public boolean addEffect(MobEffectInstance mobeffect, @Nullable Entity entity, EntityPotionEffectEvent.Cause cause) {
@@ -83,7 +83,7 @@ index 30424789ba1c8d25f830145501b4a7399b91f2d1..9bc6ed9fd8e5154d39fe12ffed1ecd5e
          // org.spigotmc.AsyncCatcher.catchOp("effect add"); // Spigot // Paper - move to API
          if (this.isTickingEffects) {
              this.effectsToProcess.add(new ProcessableEffect(mobeffect, cause));
-@@ -1180,10 +1185,13 @@ public abstract class LivingEntity extends Entity implements Attackable {
+@@ -1178,10 +1183,13 @@ public abstract class LivingEntity extends Entity implements Attackable {
                  override = new MobEffectInstance(mobeffect1).update(mobeffect);
              }
  
@@ -97,7 +97,7 @@ index 30424789ba1c8d25f830145501b4a7399b91f2d1..9bc6ed9fd8e5154d39fe12ffed1ecd5e
              // CraftBukkit end
  
              if (mobeffect1 == null) {
-@@ -1192,7 +1200,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
+@@ -1190,7 +1198,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
                  flag = true;
                  mobeffect.onEffectAdded(this);
                  // CraftBukkit start

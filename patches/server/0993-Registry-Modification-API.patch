@@ -1359,10 +1359,10 @@ index f8450a2abd1e96fac7827d252cc00038b9dee839..891ccc39d52331648a11b4e7cce78d4c
 +    // Paper end - RegistrySet API
  }
 diff --git a/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java b/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
-index 8feba2bd411abe36e64a39a0c599c73d07c19e20..75b5ec1023e2cf974696ee077195b195025ddc74 100644
+index 51d5629b00ec4929c12ed9e6ba5a37f5903cf13e..d728bf1d83877290e4d3fdaa7649ed077c0ee1ec 100644
 --- a/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
 +++ b/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
-@@ -674,6 +674,21 @@ public final class CraftMagicNumbers implements UnsafeValues {
+@@ -658,6 +658,21 @@ public final class CraftMagicNumbers implements UnsafeValues {
      }
      // Paper end - lifecycle event API
  

@@ -154,10 +154,10 @@ index 94cc69ed1ccbcfcc8f431762fef641c313b2f634..c680b311760601bb539d685bceddba67
  
      public SectionPos getLastSectionPos() {
 diff --git a/src/main/java/net/minecraft/server/players/PlayerList.java b/src/main/java/net/minecraft/server/players/PlayerList.java
-index 55e1e8ab83e8ca44735a0b1a7365526d0a3b24e7..1b6540ae28d73501c59581b1864f0e01ab53e365 100644
+index 2c810cb5d2fcf1a88423cfe4e063dd810ecaaeb0..a62858d3cd83358f2356c15fc102b99c41969a74 100644
 --- a/src/main/java/net/minecraft/server/players/PlayerList.java
 +++ b/src/main/java/net/minecraft/server/players/PlayerList.java
-@@ -803,7 +803,7 @@ public abstract class PlayerList {
+@@ -802,7 +802,7 @@ public abstract class PlayerList {
          // CraftBukkit end
          if (teleporttransition.missingRespawnBlock()) {
              entityplayer1.connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.NO_RESPAWN_BLOCK_AVAILABLE, 0.0F));

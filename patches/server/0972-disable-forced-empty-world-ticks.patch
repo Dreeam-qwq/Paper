@@ -5,10 +5,10 @@ Subject: [PATCH] disable forced empty world ticks
 
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index eed2d1ec425bbd34563fae9e69a4518ec154fc23..982d44b539e189f4a857e72554cc81f8a4501ad6 100644
+index 711d5136124c0fa21015f0154057ab5742071e59..24df2baaeb34eccbe148ac0e518f44e9a869ffa5 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
-@@ -519,7 +519,7 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
+@@ -509,7 +509,7 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
  
          this.handlingTick = false;
          gameprofilerfiller.pop();

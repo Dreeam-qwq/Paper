@@ -85,10 +85,10 @@ index 29b465fc1dc50e0e84ddb889c5303e80fe662874..4d67d98257b2cb9045d03c999cfd4ba2
  
      static class EntryBuilder {
 diff --git a/src/main/java/net/minecraft/server/players/PlayerList.java b/src/main/java/net/minecraft/server/players/PlayerList.java
-index a9063533ea4b2b349d476127b99c822203d7dfcb..218e18b9c7836bc4c9d3eba78e0717cabb9d6b61 100644
+index d92fb522d88a790d9cea2e6c4edad30bb73298fc..a20e5f896cfbd0a3e60b741562194e30257449c1 100644
 --- a/src/main/java/net/minecraft/server/players/PlayerList.java
 +++ b/src/main/java/net/minecraft/server/players/PlayerList.java
-@@ -363,14 +363,22 @@ public abstract class PlayerList {
+@@ -362,14 +362,22 @@ public abstract class PlayerList {
          // CraftBukkit end
  
          // CraftBukkit start - sendAll above replaced with this loop
@@ -112,7 +112,7 @@ index a9063533ea4b2b349d476127b99c822203d7dfcb..218e18b9c7836bc4c9d3eba78e0717ca
              }
  
              if (entityplayer1 == player || !bukkitPlayer.canSee(entityplayer1.getBukkitEntity())) { // Paper - Use single player info update packet on join; Don't include joining player
-@@ -381,7 +389,7 @@ public abstract class PlayerList {
+@@ -380,7 +388,7 @@ public abstract class PlayerList {
          }
          // Paper start - Use single player info update packet on join
          if (!onlinePlayers.isEmpty()) {
@@ -122,7 +122,7 @@ index a9063533ea4b2b349d476127b99c822203d7dfcb..218e18b9c7836bc4c9d3eba78e0717ca
          // Paper end - Use single player info update packet on join
          player.sentListPacket = true;
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-index 80877e62d0743891f38abeee5b5b04b4f3bc4010..1943cb7b691573d3f9755d21d4b5a4210c1cc329 100644
+index abb0370243ad95260c5c6034e20097a09415fe00..47180d44b7e168352b17bc295ffb6d3ea6e0a937 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -206,6 +206,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
@@ -133,7 +133,7 @@ index 80877e62d0743891f38abeee5b5b04b4f3bc4010..1943cb7b691573d3f9755d21d4b5a421
      private static final WeakHashMap<Plugin, WeakReference<Plugin>> pluginWeakReferences = new WeakHashMap<>();
      private int hash = 0;
      private double health = 20;
-@@ -2122,7 +2123,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+@@ -2116,7 +2117,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
                  otherPlayer.setUUID(uuidOverride);
              }
              // Paper end
@@ -142,7 +142,7 @@ index 80877e62d0743891f38abeee5b5b04b4f3bc4010..1943cb7b691573d3f9755d21d4b5a421
              if (original != null) otherPlayer.setUUID(original); // Paper - uuid override
          }
  
-@@ -2226,6 +2227,41 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+@@ -2220,6 +2221,41 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
          return (entity != null) ? this.canSee(entity) : false; // If we can't find it, we can't see it
      }
  

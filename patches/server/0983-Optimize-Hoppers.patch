@@ -50,10 +50,10 @@ index 0000000000000000000000000000000000000000..5c42823726e70ce6c9d0121d07431548
 +    }
 +}
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index a6975966f7fbf2dc765b10214ea434bc0c73b66e..7981abcea38196658556d403cbb588a7ddfff6ba 100644
+index 2d2bb7ed1456d90e7d9218a445a1cf26aaaa6ede..e3e3099bb33d21055e480fdbd2df2a3e159f0f1a 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
-@@ -1725,6 +1725,7 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
+@@ -1689,6 +1689,7 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
              ServerLevel worldserver = (ServerLevel) iterator.next();
              worldserver.hasPhysicsEvent = org.bukkit.event.block.BlockPhysicsEvent.getHandlerList().getRegisteredListeners().length > 0; // Paper - BlockPhysicsEvent
              worldserver.hasEntityMoveEvent = io.papermc.paper.event.entity.EntityMoveEvent.getHandlerList().getRegisteredListeners().length > 0; // Paper - Add EntityMoveEvent
@@ -85,18 +85,18 @@ index 947e2a3620d73569552c5185664b7564e908007e..33e7d2884195677c4d6340d8b84c1dd8
              itemstack.setPopTime(this.getPopTime());
              return itemstack;
 diff --git a/src/main/java/net/minecraft/world/level/block/entity/BlockEntity.java b/src/main/java/net/minecraft/world/level/block/entity/BlockEntity.java
-index b4aff394694417cff1930cf8fbd6696b9f9c9d01..fb00e5a02bb8c64e27d6d009068ba041098951d6 100644
+index 39fc5aa6ac8c66d8dd7437262124b61c4c138689..1f929b467a0ece3143af58a657cf5983c07a8d51 100644
 --- a/src/main/java/net/minecraft/world/level/block/entity/BlockEntity.java
 +++ b/src/main/java/net/minecraft/world/level/block/entity/BlockEntity.java
-@@ -38,6 +38,7 @@ import co.aikar.timings.MinecraftTimings; // Paper
- import co.aikar.timings.Timing; // Paper
+@@ -34,6 +34,7 @@ import org.bukkit.inventory.InventoryHolder;
+ // CraftBukkit end
  
  public abstract class BlockEntity {
 +    static boolean ignoreTileUpdates; // Paper - Perf: Optimize Hoppers
  
-     public Timing tickTimer = MinecraftTimings.getTileEntityTimings(this); // Paper
      // CraftBukkit start - data containers
-@@ -230,6 +231,7 @@ public abstract class BlockEntity {
+     private static final CraftPersistentDataTypeRegistry DATA_TYPE_REGISTRY = new CraftPersistentDataTypeRegistry();
+@@ -225,6 +226,7 @@ public abstract class BlockEntity {
  
      public void setChanged() {
          if (this.level != null) {

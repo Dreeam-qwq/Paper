@@ -5,10 +5,10 @@ Subject: [PATCH] Configurable max block/fluid ticks
 
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 99e6021bc0dc5775f4443bdb77debd535a2cf29f..eed2d1ec425bbd34563fae9e69a4518ec154fc23 100644
+index ea1281c9a3b83b17de64d583e029db9bacabcd88..711d5136124c0fa21015f0154057ab5742071e59 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
-@@ -492,9 +492,9 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
+@@ -489,9 +489,9 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
          if (!this.isDebug() && flag) {
              j = this.getGameTime();
              gameprofilerfiller.push("blockTicks");
@@ -19,4 +19,4 @@ index 99e6021bc0dc5775f4443bdb77debd535a2cf29f..eed2d1ec425bbd34563fae9e69a4518e
 +            this.fluidTicks.tick(j, paperConfig().environment.maxFluidTicks, this::tickFluid); // Paper - configurable max fluid ticks
              gameprofilerfiller.pop();
          }
-         this.timings.scheduledBlocks.stopTiming(); // Paper
+ 

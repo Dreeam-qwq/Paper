@@ -7,10 +7,10 @@ This causes spawnAfterBreak to spawn xp by default, removing the need to manuall
 For classes that use custom xp amounts, they can drop the resources with disabling
 
 diff --git a/src/main/java/net/minecraft/world/level/Level.java b/src/main/java/net/minecraft/world/level/Level.java
-index d048d0e4b16459b5bad44ebfa3c6a8f336f6762b..83537aa240ebff8dd19b450956730dc3d4f355a0 100644
+index 18c011c1943867dbc4abee338b03b9be499876dd..01fbefdbed48ab85481c811cca532c91860626f7 100644
 --- a/src/main/java/net/minecraft/world/level/Level.java
 +++ b/src/main/java/net/minecraft/world/level/Level.java
-@@ -617,7 +617,8 @@ public abstract class Level implements LevelAccessor, AutoCloseable {
+@@ -615,7 +615,8 @@ public abstract class Level implements LevelAccessor, AutoCloseable {
              if (drop) {
                  BlockEntity tileentity = iblockdata.hasBlockEntity() ? this.getBlockEntity(pos) : null;
  
@@ -21,10 +21,10 @@ index d048d0e4b16459b5bad44ebfa3c6a8f336f6762b..83537aa240ebff8dd19b450956730dc3
  
              boolean flag1 = this.setBlock(pos, fluid.createLegacyBlock(), 3, maxUpdateDepth);
 diff --git a/src/main/java/net/minecraft/world/level/block/Block.java b/src/main/java/net/minecraft/world/level/block/Block.java
-index 6fb3f551f432d7e668c606fb7bd3514408e0478a..9917df070d9815b6915e4a0b022dfe4e5b7861e7 100644
+index 4ff32e3fb1a1979827ef063cda196a43995440fe..dc242451f397ae6a30b830ef1f211f1a066423a4 100644
 --- a/src/main/java/net/minecraft/world/level/block/Block.java
 +++ b/src/main/java/net/minecraft/world/level/block/Block.java
-@@ -311,23 +311,31 @@ public class Block extends BlockBehaviour implements ItemLike {
+@@ -302,23 +302,31 @@ public class Block extends BlockBehaviour implements ItemLike {
              for (ItemStack drop : Block.getDrops(state, serverLevel, pos, blockEntity)) {
                  items.add(org.bukkit.craftbukkit.inventory.CraftItemStack.asBukkitCopy(drop));
              }
@@ -58,7 +58,7 @@ index 6fb3f551f432d7e668c606fb7bd3514408e0478a..9917df070d9815b6915e4a0b022dfe4e
          }
  
      }
-@@ -415,7 +423,7 @@ public class Block extends BlockBehaviour implements ItemLike {
+@@ -406,7 +414,7 @@ public class Block extends BlockBehaviour implements ItemLike {
          player.awardStat(Stats.BLOCK_MINED.get(this));
          player.causeFoodExhaustion(0.005F, org.bukkit.event.entity.EntityExhaustionEvent.ExhaustionReason.BLOCK_MINED); // CraftBukkit - EntityExhaustionEvent
          if (includeDrops) { // Paper - fix drops not preventing stats/food exhaustion

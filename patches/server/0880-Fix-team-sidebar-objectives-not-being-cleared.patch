@@ -9,7 +9,7 @@ scoreboards. If a player's scoreboard has a displayed objective for the
 still had a 'gold' team, it would still be displayed
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftScoreboardManager.java b/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftScoreboardManager.java
-index cad42a0f3c016bf65181e50d139ae4e2fb9158a5..b3e1adeb932da9b3bed16acd94e2f16da48a7c72 100644
+index c7ca6210d6ae37fe95068c9baa5fb654f95307e0..f3184be3853dfc4df4ae4b8af764dfef07628ef4 100644
 --- a/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftScoreboardManager.java
 +++ b/src/main/java/org/bukkit/craftbukkit/scoreboard/CraftScoreboardManager.java
 @@ -87,8 +87,8 @@ public final class CraftScoreboardManager implements ScoreboardManager {

@@ -28,10 +28,10 @@ index c80fd4960dfbb0fde37363e7df25b0a5411bdb11..ff7f6916f65466c25a7bde35d64682c1
      public static final Codec<CustomData> CODEC_WITH_ID = CODEC.validate(
          component -> component.getUnsafe().contains("id", 8) ? DataResult.success(component) : DataResult.error(() -> "Missing id for entity in: " + component)
 diff --git a/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java b/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
-index e1186f840670aabb73668e03d66789f9e306e234..2a5c5e9e04d90c4e218b200bb55ff6bf2877ad73 100644
+index 15bb55f0b4c60b0519918b910398a0908022128f..ef0ef0872a44eb34fe41358728f3ddcf262297e9 100644
 --- a/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
 +++ b/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
-@@ -511,6 +511,39 @@ public final class CraftMagicNumbers implements UnsafeValues {
+@@ -516,6 +516,39 @@ public final class CraftMagicNumbers implements UnsafeValues {
          return CraftItemStack.asCraftMirror(net.minecraft.world.item.ItemStack.parse(MinecraftServer.getServer().registryAccess(), compound).orElseThrow());
      }
  

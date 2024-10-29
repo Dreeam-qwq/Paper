@@ -26,10 +26,10 @@ index c6dcc37ac5fcf50bcb246f533b99983dfc5c19c2..c13b6f14c3061710c2b27034db240cc9
                  d3 = to.getX();
                  d4 = to.getY();
 diff --git a/src/main/java/net/minecraft/world/entity/LivingEntity.java b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-index 4b9108e48d052919bca000ddb54f9bf4589c33e6..1c4ec3857c5c3ecf58f842292c280a4a1f00a04c 100644
+index adde7352cdbcb8684f43d6bf5978b6943e9f165b..9d3d6f012cfca60884019ed9710804aa37b11fbf 100644
 --- a/src/main/java/net/minecraft/world/entity/LivingEntity.java
 +++ b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-@@ -4365,7 +4365,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
+@@ -4363,7 +4363,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
                      if (!(this instanceof ServerPlayer)) {
                          EntityTeleportEvent teleport = new EntityTeleportEvent(this.getBukkitEntity(), new Location(this.level().getWorld(), d3, d4, d5), new Location(this.level().getWorld(), d0, d6, d2));
                          this.level().getCraftServer().getPluginManager().callEvent(teleport);

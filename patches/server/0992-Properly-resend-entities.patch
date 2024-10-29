@@ -102,10 +102,10 @@ index 52eafd99ed63f5fc9596225cf45175b1287f20a1..e5db85f858ab376b225172e22b92b841
                              }
  
 diff --git a/src/main/java/net/minecraft/server/players/PlayerList.java b/src/main/java/net/minecraft/server/players/PlayerList.java
-index 59cc1702079f1d182bdbe8068aa37b5b979aa64d..90c469193ecf9d04dd9e3f1a38157d47c5094985 100644
+index 751fc4b0fe60c6d26ea0f768f3d66031a4bad963..700ab5ef2f8ab1466c4f659cd34679dc809efbaf 100644
 --- a/src/main/java/net/minecraft/server/players/PlayerList.java
 +++ b/src/main/java/net/minecraft/server/players/PlayerList.java
-@@ -397,7 +397,7 @@ public abstract class PlayerList {
+@@ -396,7 +396,7 @@ public abstract class PlayerList {
          ((ServerLevel)player.level()).getChunkSource().chunkMap.addEntity(player); // Paper - Fire PlayerJoinEvent when Player is actually ready; track entity now
          // CraftBukkit end
  
@@ -114,7 +114,7 @@ index 59cc1702079f1d182bdbe8068aa37b5b979aa64d..90c469193ecf9d04dd9e3f1a38157d47
  
          this.sendLevelInfo(player, worldserver1);
  
-@@ -908,12 +908,17 @@ public abstract class PlayerList {
+@@ -907,12 +907,17 @@ public abstract class PlayerList {
      }
  
      public void sendActiveEffects(LivingEntity entity, ServerGamePacketListenerImpl networkHandler) {
@@ -186,10 +186,10 @@ index aa7d3383c773d3537335e449636f33d69cde12bb..6a0472eaae9ad890692862590b8d2311
      public boolean equals(Object object) {
          return object instanceof Entity ? ((Entity) object).id == this.id : false;
 diff --git a/src/main/java/net/minecraft/world/entity/LivingEntity.java b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-index 52ca53b4795981080476fa9425e01f2c804ae6b7..ed84f06d64afb117e08e8c8b54e992c0159a4a77 100644
+index 22f520414442c05986cc620208afaa895d8ee4fa..5e4716158da891216acc835f2560f980f527c66f 100644
 --- a/src/main/java/net/minecraft/world/entity/LivingEntity.java
 +++ b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-@@ -4031,6 +4031,11 @@ public abstract class LivingEntity extends Entity implements Attackable {
+@@ -4029,6 +4029,11 @@ public abstract class LivingEntity extends Entity implements Attackable {
          return ((Byte) this.entityData.get(LivingEntity.DATA_LIVING_ENTITY_FLAGS) & 2) > 0 ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND;
      }
  

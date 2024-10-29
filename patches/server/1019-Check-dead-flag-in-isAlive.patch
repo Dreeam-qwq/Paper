@@ -15,10 +15,10 @@ Also, even if the plugin is responsibly checking !isDead() before modifying heal
 I am currently unable to replicate, these "revived" entities can still appear
 
 diff --git a/src/main/java/net/minecraft/world/entity/LivingEntity.java b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-index ab9eec00c8c7d4b9501c6c860065909263da0b10..6db0613904c172fb6ae7e868f542f56aeaa63a5e 100644
+index ad536c76010957650814b293fc8220ac525c13f1..ceaba7b82e9ff73a14fdef046e63b07c4d0fd5e9 100644
 --- a/src/main/java/net/minecraft/world/entity/LivingEntity.java
 +++ b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-@@ -2147,7 +2147,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
+@@ -2145,7 +2145,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
  
      @Override
      public boolean isAlive() {

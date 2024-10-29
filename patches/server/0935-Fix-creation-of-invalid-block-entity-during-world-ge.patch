@@ -36,10 +36,10 @@ index 2e72e92762877b28dd908711671e1dfb933de9b0..b7d29389a357f142237cecd75f8ca91c
  
                      nbttagcompound.putInt("x", pos.getX());
 diff --git a/src/main/java/net/minecraft/world/level/chunk/LevelChunk.java b/src/main/java/net/minecraft/world/level/chunk/LevelChunk.java
-index 7181acfafad91aa5f6ab7ce663d9be4a1b65b02a..5dd1df0da1f954778aebe0f40611ae0f3a7866ab 100644
+index d4bd4cbc5c4773659662a6d7a09b21a99463c1fb..7a794bb0587ce55b067c67dd17ab5be6a4773030 100644
 --- a/src/main/java/net/minecraft/world/level/chunk/LevelChunk.java
 +++ b/src/main/java/net/minecraft/world/level/chunk/LevelChunk.java
-@@ -994,9 +994,14 @@ public class LevelChunk extends ChunkAccess {
+@@ -991,9 +991,14 @@ public class LevelChunk extends ChunkAccess {
                          if (this.blockEntity.getType().isValid(iblockdata)) {
                              this.ticker.tick(LevelChunk.this.level, this.blockEntity.getBlockPos(), iblockdata, this.blockEntity);
                              this.loggedInvalidBlockState = false;

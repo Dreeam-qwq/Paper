@@ -7,10 +7,10 @@ Subject: [PATCH] Fix missing map initialize event call
 public net.minecraft.world.level.storage.DimensionDataStorage readSavedData(Ljava/util/function/Function;Lnet/minecraft/util/datafix/DataFixTypes;Ljava/lang/String;)Lnet/minecraft/world/level/saveddata/SavedData;
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 9270584d74edf5c1af473b1a13f7edca74cc1ec7..1bacbb0d0bd5198d0f946a959b2335d6fba0ca88 100644
+index 0db41d36d5daf015c750fb0246ab3e5da1cd81a2..7cecbac43f1cd2d9516034ea9d2633c0c76e61f4 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
-@@ -1726,13 +1726,29 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
+@@ -1696,13 +1696,29 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
      @Nullable
      @Override
      public MapItemSavedData getMapData(MapId id) {

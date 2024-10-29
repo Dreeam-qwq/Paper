@@ -222,10 +222,10 @@ index af3e0049beb5590520ed84b52d6df85ad22a8f23..b7ff8607cd33d8e6bdab9533792cf43a
  
                                  ServerGamePacketListenerImpl.this.player.containerMenu.sendAllDataToRemote(); // Paper - fix slot desync - always refresh player inventory
 diff --git a/src/main/java/net/minecraft/world/entity/LivingEntity.java b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-index 0cb9de4ff9ba0611a3bfc444088accb07ee19252..6fa442fe4cf585f7056bedcfbd384e15da90f613 100644
+index 563e008740bf2017a1767470a2e34629dfa5cfa1..51c3ab2baae8cbd246464777b8ddbde2d3d9d0ef 100644
 --- a/src/main/java/net/minecraft/world/entity/LivingEntity.java
 +++ b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-@@ -3462,7 +3462,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
+@@ -3460,7 +3460,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
              }
  
          });

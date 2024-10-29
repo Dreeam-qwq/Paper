@@ -20,10 +20,10 @@ index 6a0472eaae9ad890692862590b8d23110e48536d..7d16f9935407931823ad3e420f336c7e
              && (!(this instanceof Player player) || !player.getAbilities().invulnerable))) {
              // Paper end - Configurable nether ceiling damage
 diff --git a/src/main/java/net/minecraft/world/entity/LivingEntity.java b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-index 6db0613904c172fb6ae7e868f542f56aeaa63a5e..22b3d3d945cbddae25abfca7d900324c79d32293 100644
+index ceaba7b82e9ff73a14fdef046e63b07c4d0fd5e9..2914be5f6681c513bf2878a92c0c60ad997852dc 100644
 --- a/src/main/java/net/minecraft/world/entity/LivingEntity.java
 +++ b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-@@ -2702,7 +2702,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
+@@ -2700,7 +2700,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
  
      @Override
      protected void onBelowWorld() {

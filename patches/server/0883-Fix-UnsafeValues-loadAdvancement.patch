@@ -5,10 +5,10 @@ Subject: [PATCH] Fix UnsafeValues#loadAdvancement
 
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java b/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
-index 766ef49d72eef0ff80247a807db5379f7fc60302..3900f95f3ea41b010b8ea79c043fe322fa233461 100644
+index a74784ddf63d316f253381ed803822a149e92bc7..1835f8cfda0222fadd9db31abfb7e85899051853 100644
 --- a/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
 +++ b/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
-@@ -308,9 +308,30 @@ public final class CraftMagicNumbers implements UnsafeValues {
+@@ -302,9 +302,30 @@ public final class CraftMagicNumbers implements UnsafeValues {
          ResourceLocation minecraftkey = CraftNamespacedKey.toMinecraft(key);
  
          JsonElement jsonelement = JsonParser.parseString(advancement);

@@ -8,10 +8,10 @@ it will not disable the shield if the attacker is holding
 an axe item.
 
 diff --git a/src/main/java/net/minecraft/world/entity/LivingEntity.java b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-index 7196340fefd95845f290329faef489f2b2626ecb..b33dd288065b665e6feb642d090de1fd6e725448 100644
+index 49b3d8d2bc34c0785f143bbc8976308f5bf8c9de..f6d55ff3027bb7f0dcef186c52d48d9c5358ffd0 100644
 --- a/src/main/java/net/minecraft/world/entity/LivingEntity.java
 +++ b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-@@ -2426,7 +2426,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
+@@ -2424,7 +2424,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
                  this.hurtCurrentlyUsedShield((float) -event.getDamage(DamageModifier.BLOCKING));
                  Entity entity = damagesource.getDirectEntity();
  

@@ -5,10 +5,10 @@ Subject: [PATCH] Add BlockBreakProgressUpdateEvent
 
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index a628da8a0ed7ae2c7b46df3881bd75dc5b4fd607..99e6021bc0dc5775f4443bdb77debd535a2cf29f 100644
+index 7a985c30a973efacf3e8b70e7163c550d86b0870..ea1281c9a3b83b17de64d583e029db9bacabcd88 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
-@@ -1315,6 +1315,17 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
+@@ -1285,6 +1285,17 @@ public class ServerLevel extends Level implements ServerEntityGetter, WorldGenLe
          if (entity instanceof Player) entityhuman = (Player) entity;
          // CraftBukkit end
  

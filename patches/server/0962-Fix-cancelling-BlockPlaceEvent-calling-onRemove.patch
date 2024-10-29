@@ -21,7 +21,7 @@ index babd89f39c43b0c64709d99bf8aca6cdc6ca1b24..947e2a3620d73569552c5185664b7564
  
                          // Brute force all possible updates
 diff --git a/src/main/java/net/minecraft/world/level/Level.java b/src/main/java/net/minecraft/world/level/Level.java
-index 35b9a6d382e420844fc21c88b7d8044e3b8b8368..1b899473c6deeaa1aef9007d8b7bcec98580e61c 100644
+index ba4006bc7dc31d10f37023cba7995a9621796f73..96f18fa8fb5eb856a95e94a42504c00046eb491a 100644
 --- a/src/main/java/net/minecraft/world/level/Level.java
 +++ b/src/main/java/net/minecraft/world/level/Level.java
 @@ -152,6 +152,7 @@ public abstract class Level implements LevelAccessor, AutoCloseable {
@@ -33,7 +33,7 @@ index 35b9a6d382e420844fc21c88b7d8044e3b8b8368..1b899473c6deeaa1aef9007d8b7bcec9
      public Map<BlockPos, BlockEntity> capturedTileEntities = new java.util.LinkedHashMap<>(); // Paper - Retain block place order when capturing blockstates
      public List<ItemEntity> captureDrops;
 diff --git a/src/main/java/net/minecraft/world/level/chunk/LevelChunk.java b/src/main/java/net/minecraft/world/level/chunk/LevelChunk.java
-index 5dd1df0da1f954778aebe0f40611ae0f3a7866ab..325d1e38a72a4b30f30261267e9adfb8a8726b11 100644
+index 7a794bb0587ce55b067c67dd17ab5be6a4773030..56227ce823ab2997e2602f0807bbd54e54454344 100644
 --- a/src/main/java/net/minecraft/world/level/chunk/LevelChunk.java
 +++ b/src/main/java/net/minecraft/world/level/chunk/LevelChunk.java
 @@ -369,7 +369,7 @@ public class LevelChunk extends ChunkAccess {

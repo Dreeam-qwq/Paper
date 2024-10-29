@@ -17,10 +17,10 @@ index d9502ba028a96f9cc846f9ed428bd8066b857ca3..87e5f614ba988547a827486740db217e
              node = loader.load();
              this.verifyGlobalConfigVersion(node);
 diff --git a/src/main/java/io/papermc/paper/configuration/GlobalConfiguration.java b/src/main/java/io/papermc/paper/configuration/GlobalConfiguration.java
-index 36b96e0ed5c0d25068ec4678eddd8a19a020d345..8a0cb603cd4dbfa1839e0f4e1606876cbb373277 100644
+index 56798215644d8bca1695856b3a941e8089f49e48..46c37c8db8ecf3cc808fcf59f6bee5fe6ca49b75 100644
 --- a/src/main/java/io/papermc/paper/configuration/GlobalConfiguration.java
 +++ b/src/main/java/io/papermc/paper/configuration/GlobalConfiguration.java
-@@ -27,6 +27,7 @@ public class GlobalConfiguration extends ConfigurationPart {
+@@ -25,6 +25,7 @@ public class GlobalConfiguration extends ConfigurationPart {
      private static final Logger LOGGER = LogUtils.getLogger();
      static final int CURRENT_VERSION = 29; // (when you change the version, change the comment, so it conflicts on rebases): <insert changes here>
      private static GlobalConfiguration instance;
@@ -29,10 +29,10 @@ index 36b96e0ed5c0d25068ec4678eddd8a19a020d345..8a0cb603cd4dbfa1839e0f4e1606876c
          return instance;
      }
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index 7e83a0de08488c5acf3c1a5d7107564e2a8ed7e0..6de199b7cf7728479fede534338829cecade50f2 100644
+index be188079f12b3f7b394ae91db62cc17b1d0f4e79..2de0ae09de41f3ed254318a78d65045fc76e5016 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
-@@ -1151,6 +1151,16 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
+@@ -1149,6 +1149,16 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
              long tickSection = Util.getNanos();
              long currentTime;
              // Paper end - further improve server tick loop

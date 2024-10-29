@@ -89,10 +89,10 @@ index 02b9d280486a23d8eef650566dfaa10ac0b96c9c..cdc5ea3dd9559c076049c86a9fdb4e8b
              return this.spawnAtLocation(world, entityitem);
          }
 diff --git a/src/main/java/net/minecraft/world/entity/LivingEntity.java b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-index 9bc6ed9fd8e5154d39fe12ffed1ecd5ec8e70df8..4b9108e48d052919bca000ddb54f9bf4589c33e6 100644
+index 251abe382f951c3ddac8112a0ffe1dc906b88e4c..adde7352cdbcb8684f43d6bf5978b6943e9f165b 100644
 --- a/src/main/java/net/minecraft/world/entity/LivingEntity.java
 +++ b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-@@ -291,7 +291,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
+@@ -289,7 +289,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
      protected float appliedScale;
      // CraftBukkit start
      public int expToDrop;

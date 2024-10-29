@@ -12,10 +12,10 @@ This patch moves the invocation directly before the #actuallyHurt calls,
 respective invulnerable timings.
 
 diff --git a/src/main/java/net/minecraft/world/entity/LivingEntity.java b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-index ed84f06d64afb117e08e8c8b54e992c0159a4a77..ab9eec00c8c7d4b9501c6c860065909263da0b10 100644
+index 5e4716158da891216acc835f2560f980f527c66f..ad536c76010957650814b293fc8220ac525c13f1 100644
 --- a/src/main/java/net/minecraft/world/entity/LivingEntity.java
 +++ b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-@@ -1491,12 +1491,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
+@@ -1489,12 +1489,7 @@ public abstract class LivingEntity extends Entity implements Attackable {
              }
  
              // CraftBukkit start
@@ -29,7 +29,7 @@ index ed84f06d64afb117e08e8c8b54e992c0159a4a77..ab9eec00c8c7d4b9501c6c8600659092
              // CraftBukkit end
  
              this.walkAnimation.setSpeed(1.5F);
-@@ -1511,6 +1506,11 @@ public abstract class LivingEntity extends Entity implements Attackable {
+@@ -1509,6 +1504,11 @@ public abstract class LivingEntity extends Entity implements Attackable {
                      return false;
                  }
  
@@ -41,7 +41,7 @@ index ed84f06d64afb117e08e8c8b54e992c0159a4a77..ab9eec00c8c7d4b9501c6c8600659092
                  // CraftBukkit start
                  if (!this.actuallyHurt(world, source, (float) event.getFinalDamage() - this.lastHurt, event)) {
                      return false;
-@@ -1520,6 +1520,10 @@ public abstract class LivingEntity extends Entity implements Attackable {
+@@ -1518,6 +1518,10 @@ public abstract class LivingEntity extends Entity implements Attackable {
                  this.lastHurt = amount;
                  flag1 = false;
              } else {
@@ -52,7 +52,7 @@ index ed84f06d64afb117e08e8c8b54e992c0159a4a77..ab9eec00c8c7d4b9501c6c8600659092
                  // CraftBukkit start
                  if (!this.actuallyHurt(world, source, (float) event.getFinalDamage(), event)) {
                      return false;
-@@ -1655,6 +1659,18 @@ public abstract class LivingEntity extends Entity implements Attackable {
+@@ -1653,6 +1657,18 @@ public abstract class LivingEntity extends Entity implements Attackable {
          }
      }
  

@@ -727,10 +727,10 @@ index 2e96308696e131f3f013469a395e5ddda2c5d529..65a66e484c1c39c5f41d97db52f31c67
                  } catch (Throwable e) {
                      LOGGER.error("Failed to run bootstrapper for %s. This plugin will not be loaded.".formatted(provider.getSource()), e);
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index dbdf52a306d7018f0bf01fcf6c24a6d1dc269be5..fb55dced981d16a82e4cc233fbf25695850a1b99 100644
+index a1f2c8fd0348a6a5dad521430f473867bdadd1a5..a2c749b2997557fec5c978f3bed8c35d7614e740 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-@@ -1051,6 +1051,11 @@ public final class CraftServer implements Server {
+@@ -1050,6 +1050,11 @@ public final class CraftServer implements Server {
  
      @Override
      public void reload() {
@@ -743,10 +743,10 @@ index dbdf52a306d7018f0bf01fcf6c24a6d1dc269be5..fb55dced981d16a82e4cc233fbf25695
          this.reloadCount++;
          this.configuration = YamlConfiguration.loadConfiguration(this.getConfigFile());
 diff --git a/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java b/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
-index 7ae4567bc6f2f0374d1a4a3859f6329eaace7415..ca201861b383bac4ea93284ac017e85ae0b3b17c 100644
+index 30106a999db1bae217333b5e94913b9ec55e4615..06d66c8043daec3c736d82d972ceb98d55eae9d1 100644
 --- a/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
 +++ b/src/main/java/org/bukkit/craftbukkit/util/CraftMagicNumbers.java
-@@ -652,6 +652,13 @@ public final class CraftMagicNumbers implements UnsafeValues {
+@@ -638,6 +638,13 @@ public final class CraftMagicNumbers implements UnsafeValues {
      }
      // Paper end - spawn egg color visibility
  
